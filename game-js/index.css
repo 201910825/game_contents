@@ -87,3 +87,8 @@ i:hover{
     border-radius: 50%;
     color: white !important;
 }
+a{
+    text-decoration: none;
+    font-family: 'OAGothic-ExtraBold'!important;
+    font-size: 24px;
+}
