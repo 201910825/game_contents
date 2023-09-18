@@ -8,11 +8,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>웹페이지</title>
-        <base href="https://cdn.pixabay.com/photo/">
     </head>
     <body>
         <div class="header">
-            <h2 href="./index.html">어떤걸 만들까</h2>
+            <a href="./index.html">어떤걸 만들까</a>
             <div style="width: 20%; display: flex; justify-content:center">
                 <input class="search" type="text" placeholder="아직 없습니다" onKeypress="javascript:if(event.keyCode==13){feedback();}"/>
                 <i class="fa fa-search" style="color: black; font-size: 24px" ></i>
@@ -25,15 +24,18 @@
                 <div class="context">
                     <h2>Main context</h2>
                     <div class="img_container">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/08/05/15/42/panda-8171354_1280.jpg" alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
-                        <img src="2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <!-- base href로 해당 cdn의 url로 설정을 하고싶었지만,
+                        메인html에 a태그로 연결할 때, base요소의 href 속성에 문제가 생겨,
+                        사진당 완전한 url 경로로 삽입하게 되었습니다..!  -->
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg" alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg" alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
+                        <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg"alt="이미지 연결 실패">
                         
                     </div>
                 </div>
