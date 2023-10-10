@@ -29,8 +29,7 @@ body{
     background-image: url("https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg");
     background-repeat: no-repeat;
     position: fixed;
-    background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
