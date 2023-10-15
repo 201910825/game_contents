@@ -10,6 +10,7 @@
             p{font-size: 14px; color: yellow;}
         </style>
         <title>웹페이지</title>
+        <script src="./week1.js"></script>
     </head>
     <body>
         <div class="header">
@@ -19,7 +20,7 @@
                 <input class="search" type="text" placeholder="아직 없습니다" onKeypress="javascript:if(event.keyCode==13){feedback();}"/>
                 <i class="fa fa-search" style="color: black; font-size: 24px" ></i>
                 <i class="fa fa-bars" style="color: black; font-size: 24px" ></i>
-                <a href="./login/login_page.html" style="color: black; font-size: 24px"><i class="fa fa-male"></i><a>
+                <a href="./login/login_page.html" style="color: black; font-size: 18px">로그인<a>
             </div>
         </div>
         <div class="container">
@@ -35,13 +36,13 @@
                     <h1 style="text-align: center;">메뉴창</h1>
                     <hr>
                     <li>
-                        <p>후보군 1</p>
+                        <p>메인페이지</p>
                     </li>
                     <li>
-                        <p>후보군 2</p>
+                        <p>구구단</p>
                     </li>
                     <li>
-                        <p>후보군 3</p>
+                        <p>프로토타입</p>
                     </li>
                     <li>
                         <p>후보군 4</p>
@@ -55,44 +56,26 @@
         </div>
         <section class="section-2">
             <div class="img_container">
-                <div class="img1">
+                <div class="math-test">
+                    <button onclick=mathTest()>테스트 시작하기</button>
 
                 </div>
+                
                 <div class="detail1">
 
                 </div>
             </div>
                 
         </section>
+        <section class="section-3">
+            <div class="my-state">
+                <button onclick=meClick()>내 점수상태 확인</button>
+                <div class="answer"></div>
+            </div>
+            
+        </section>
     </body>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
-        window.addEventListener("wheel", (e) => {
-            e.preventDefault();
-        }, {passive : false});
-        
-        const $html = $("html");
-        const lastPage = $("section").length;
-        let page = 1;
-        
-        $html.animate({scrollTop:0}, 10);
-        
-        $(window).on("wheel", (e) => {
-            if ($html.is(":animated")) return;
-         
-            if (e.originalEvent.deltaY > 0){
-                if(page == lastPage) return;
-                page++;
-            }
-        
-            if (e.originalEvent.deltaY < 0) {
-                if(page == 1) return;
-                page--;
-            }
-        
-            const posTop = (page-1) * $(window).height();
-            $html.animate({scrollTop : posTop});
-        });
         const feedback= ()=>{ alert("아직 설정안했습니다! ㅜ");}
         const menu_bar = document.querySelector('.fa-bars');//반응형 메뉴창 설정
         const menu = document.querySelector('.menu');
