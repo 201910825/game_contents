@@ -73,6 +73,8 @@ function me (name, score) {
     }
 }
 
+
+
 const meClick =  ()=>{
     let getName = prompt("이름?: ","")
     let getScore = prompt("점수?: ",0)
@@ -82,4 +84,76 @@ const meClick =  ()=>{
     const myscore = new me(getName, getScore);
     myscore.getGrade();
 }
+
+//2023.10.19일자
+let box_opened = false;
+function boxOpen() {
+    let box = document.getElementById("giftbox");
+    box.innerHTML= "<img src='./img/openbox.png'>"+"꽝 입니다!!!";
+    box_opened=true;
+}
+
+function boxClose() {
+    let box = document.getElementById("giftbox");
+    box.innerHTML= "<img src='./img/closebox.png'>"+"상자를 다시 열어봅시다!";
+    box_opened=false;
+}
+
+function GiftBox(){
+    if(box_opened){
+        boxClose();
+    }
+    else boxOpen();
+
+}
+
+function colorChange() {
+let spanArray = document.getElementsByTagName("span");
+for(let i=0; i<spanArray.length; i++) {
+var span = spanArray[i];
+span.style.color = "orchid";
+span.style.fontSize = "20px";
+}
+} 
+let count =0;
+function controlDiv() {
     
+    let obj = document.getElementById("parent");
+    let newDIV = document.createElement("div");
+    count += 1;
+    newDIV.innerHTML = "새로 생성된 DIV입니다.<span>"+count+"</span>개 째.";
+    newDIV.setAttribute("id", count);
+    newDIV.style.background = "linear-gradient(170deg, #b259df,#9dc3c8 20% ,#7aefe3)";
+    newDIV.style.height = "200px";
+    newDIV.style.zIndex = "2";
+    newDIV.onclick = function() {
+    let p = newDIV;
+     p.innerHTML = "클릭하셨네요!!("+this.id+"번째div)"; 
+    };
+    if(count<=4){
+        obj.appendChild(newDIV);
+        if(count> 3){
+        newDIV.innerHTML = "3개를 넘어가셨군요! 이 이상 새로운 div가 생성되지 않습니다! 클릭해서 삭제하세요.";
+        newDIV.onclick = function() {
+            let p = this.parentElement; 
+            p.removeChild(this); 
+            };
+        }
+    }
+    
+    
+    
+    
+}
+
+
+let win=null;
+function showHTML() {
+if(win == null || win.closed)
+win = window.open("","outWin", "width=500,height=500");
+let textArea = document.getElementById("TextBox");
+win.document.open();
+win.document.write(textArea.value);
+win.document.close();
+}
+//여기까지
