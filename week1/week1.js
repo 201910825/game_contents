@@ -157,3 +157,38 @@ win.document.write(textArea.value);
 win.document.close();
 }
 //여기까지
+
+let h1;
+function init() { // 문서가 완전히 로드되었을 때 호출
+    
+    h1 = document.getElementById("h-1");
+    h1.addEventListener("mouseover", over); 
+    h1.addEventListener("mouseout", out); 
+}
+function over() {
+document.querySelector("#h-1").innerHTML="<h1>메인페이지 입니다.<h1>"
+}
+function out() {
+document.querySelector("#h-1").innerHTML="<h1>마우스를 떼셨군요.<h1>"
+}
+
+function query() {
+    let ret = confirm("새로운사이트를 만드시겠습니까?");
+    if(ret===true){
+        showHTML();
+    }
+    else return false;
+}
+function findChecked() {
+    let found = null;
+    let kcity = document.getElementsByName("city");
+    for(let i=0; i<kcity.length; i++) {
+    if(kcity[i].checked == true)
+    found = kcity[i];
+    }
+    if(found != null)
+    alert(found.value + "이 선택되었음");
+    else
+    alert("선택된 것이 없음");
+    }
+    

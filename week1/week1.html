@@ -12,8 +12,9 @@
         </style>
         <title>웹페이지</title>
         <script src="./week1.js"></script>
+        
     </head>
-    <body>
+    <body onload="init()">
         <div class="header">
             <a style="font-family: 'OAGothic-ExtraBold'!important;" href="./week1.html">어떤걸 만들까</a>
             <div class="icons" style="width: 80%; display: flex; justify-content:flex-end; align-items:center">
@@ -27,6 +28,7 @@
                 <div class="context">
                     <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg" alt="">
                     <h2 style="z-index: 1;">Main context</h2>
+                    <h1 id="h-1" style="z-index: 5;">마우스를 올려보세요!</h1>
                 </div>
             </section>
             <div class="menu hidden">
@@ -91,7 +93,19 @@
         <section class="section-6">
             <div class="new-site"style="text-align: center;">
                 <textarea id="TextBox" rows="10" cols="50" placeholder="아무거나 입력하세요!"></textarea>
-                <button onclick="showHTML()">새로운 사이트</button>
+                <button onclick="query()">새로운 사이트</button>
+            </div>
+        </section>
+        <section class="section-7">
+            <div class="input-contents">
+                <h3>버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다.</h3>
+                <hr>
+                <form>
+                    <input type="radio" name="city" value="seoul" checked>서울
+                    <input type="radio" name="city" value="busan">부산
+                    <input type="radio" name="city" value="chunchen">춘천
+                    <input type="button" value="find checked" onclick="findChecked()">
+                </form>
             </div>
         </section>
     </body>
@@ -120,9 +134,6 @@
 
         const searchIcon = document.querySelector('.fa-search');
         const searchInput = document.querySelector('search');
-        searchIcon.addEventListener('click', ()=>{
-           feedback();
-        })
         
        
     </script>
