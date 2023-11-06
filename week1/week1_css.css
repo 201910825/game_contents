@@ -45,14 +45,6 @@ section{
     align-items: center;
 }
 
-.context img{
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0.7;
-    z-index: 0;
-}
-
 .menu{
     width: 15%;
     position: fixed;
@@ -171,6 +163,12 @@ button{
 }
 
 .section-7{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.section-8{
     display: flex;
     align-items: center;
     justify-content: center;

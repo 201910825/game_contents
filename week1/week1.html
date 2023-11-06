@@ -20,7 +20,8 @@
             <div class="icons" style="width: 80%; display: flex; justify-content:flex-end; align-items:center">
                 <a style="font-family: 'OAGothic-ExtraBold'!important;padding-right:10px;" href="https://github.com/201910825">Github</a>
                 <i class="fa fa-bars" style="color: black; font-size: 24px" ></i>
-                <a href="./login/login_page.html" style="color: black; font-size: 18px">로그인<a>
+                <h2 id="username" style="font-size: 13px;"></h2><br/>
+                <div onclick="DeleteCookie()" id="deleteName" style="font-size: 13px;"></div>
             </div>
         </div>
         <div class="container">
@@ -29,6 +30,8 @@
                     <img src="https://cdn.pixabay.com/photo/2023/05/25/07/31/woman-8016553_1280.jpg" alt="">
                     <h2 style="z-index: 1;">Main context</h2>
                     <h1 id="h-1" style="z-index: 5;">마우스를 올려보세요!</h1>
+                    <br><br>
+                    <h2 id="counter"></h2>
                 </div>
             </section>
             <div class="menu hidden">
@@ -106,6 +109,16 @@
                     <input type="radio" name="city" value="chunchen">춘천
                     <input type="button" value="find checked" onclick="findChecked()">
                 </form>
+            </div>
+        </section>
+        <section class="section-8">
+            <div class="input-contents" style="color: white;">
+                <a href="javascript:load()">
+                    새 윈도우 열기(들어가고싶은 사이트 입력)</a><br>
+                <a href="javascript:window.close()">
+                    현재 윈도우 닫기</a><br>
+                <a href="javascript:closeNewWindow()">
+                    새 윈도우 닫기</a>
             </div>
         </section>
     </body>

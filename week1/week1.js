@@ -192,3 +192,105 @@ function findChecked() {
     alert("선택된 것이 없음");
     }
     
+    let newWin=null;
+function load() {
+    let setUrl = prompt("url을 입력하세요: ","https://")
+    newWin = window.open(setUrl, "myWin",
+    "left=300,top=300,width=400,height=300");
+    let urlLink = confirm("해당사이트에 접속하시겠습니까? ")
+    if(urlLink===true){
+        alert("3초뒤에 접속됩니다.")
+        setTimeout("newWin", 3000);
+    }
+    else return;
+        
+}
+function closeNewWindow() {
+    if(newWin==null || newWin.closed) 
+    return; 
+    else{
+        
+        if(urlLink===true){
+            alert("3초뒤에 접속됩니다.")
+            setTimeout("newWin.close()", 3000);
+        }
+        else return;
+        } 
+}
+
+function GetCookie (name) {
+    let str = name+"=";
+    let pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+    for(let i=0; i<pairs.length; i++) {
+    let pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+    let unit = pair.split("=");
+    if(unit[0] == name)
+    return unescape(unit[1]);
+    }
+    return null;
+    }
+function SetCookie (name, value, expireDate) {
+    let cookieStr = name + "=" + escape(value) +
+    ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
+    document.cookie = cookieStr;
+}
+
+let username = GetCookie("username");
+let counter = GetCookie("count"); 
+let expire = new Date ();
+function cookieLog()
+{
+    
+     // 현재 시간
+    if (username == null) {
+        counter = 0;
+        username = prompt("이름을 입력해 주십시오.","");
+        if (username == null) {
+            alert("이름을 입력하시면 보다 나은 서비스를 제공받을 수 있습니다.");
+            username = "unknown";
+            } 
+        else {
+            expire.setTime(expire.getTime() + (7 * 24 * 3600 * 1000)); // 일주일
+            SetCookie("username",username,expire);
+        }
+    }
+    counter++;
+    expire.setTime(expire.getTime() + (7 * 24 * 3600 * 1000)); // 일주일 후
+    SetCookie("count",counter,expire);
+    
+
+   
+}
+ 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#h-1").innerHTML="<h1>메인페이지 입니다.<h1>"
+   
+    cookieLog(); 
+    document.querySelector("#username").innerHTML=username+"님 반갑습니다.";
+    document.querySelector("#counter").innerHTML=counter+"번 째 방문하셨군요!.";
+    if (username !== "") {
+        const deleteButton = document.createElement("button");
+        deleteButton.style.width="100px"
+        deleteButton.textContent = "로그아웃";
+        deleteButton.addEventListener("click", function () {
+            DeleteCookie("username");
+        });
+        const deleteNameElement = document.querySelector("#deleteName");
+        if (deleteNameElement) {
+            deleteNameElement.appendChild(deleteButton);
+        }
+    }
+});
+
+function DeleteCookie(name) {
+    let expireDate = new Date();
+    expireDate.setTime(expireDate.getTime() - 1); // 현재 시간 이전으로 설정하여 쿠키를 만료시킴
+    let cookieStr = name + "=; expires=" + expireDate.toUTCString();
+    document.cookie = cookieStr;
+    location.reload(); // 페이지 새로 고침
+}
+    
+
+
+
+    
